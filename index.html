@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Vaca Lechera - Caja Registradora</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" type="image/x-icon" href="./images/logo.png">
+
+</head>
+<body>
+    <img src="./images/fondo.webp" alt="Fondo lacteo" id="fondo">
+    <header id="contenedor-titulo">
+        <h1 id="titulo">LA VACA LECHERA <img id="logo" src="./images/logo.png" alt="Logo de vaca"></h1>
+        <h2 id="subtitulo">CAJA REGISTRADORA</h2>
+    </header>
+
+    <main id="contenedor-info">
+        <div id="container-products">
+            <h2 id="subtitulo-products">Nuestros productos</h2>
+            <div class="select-wrapper">
+                <select id="opciones" name="opciones" onchange="cambiarProducto()">
+                    <option value="" disabled selected>Selecciona un producto</option>
+                    <option value="quesillo">Quesillo tajado</option>
+                    <option value="yogurt_griego">Yogurt Griego</option>
+                    <option value="yogurt_semidescremado">Yogurt semidescremado</option>
+                    <option value="leche_descremada">Leche descremada</option>
+                    <option value="queso_parmesano">Queso parmesano</option>
+                    <option value="leche_entera">Leche entera</option>
+                </select>
+            </div>
+            <img id="imagen-producto" src="./images/producto0.png" alt="Imagen del producto">
+        </div>
+
+        <div id="container-compra">
+            <h2 id="subtitulo-compra">Compra</h2>
+            <div id="producto-cantidad">
+                <div id="sub-producto-cantidad">
+                    <h2>Producto</h2>
+                    <h2>Cantidad</h2>
+                </div>
+                <div> 
+                    <input type="text" id="producto-seleccionado" readonly>
+                    <input type="number" id="cantidad" value="1" min="1" onchange="actualizarTotal()">
+                </div>
+            </div>
+            <p id="total-precio">$0</p>
+            <div id="botones-accion">
+                <button id="boton-comprar" onclick="comprarProducto()">Comprar</button>
+                <button id="boton-borrar" onclick="borrarTodo()">Borrar Todo</button>
+            </div>
+            <div id="factura">
+                <table id="tabla-factura">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Subtotal</th>
+                            <th>Borrar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="factura-body"></tbody>
+                </table>
+            </div>
+            <p id="total-compra">TOTAL: $0</p>
+        </div>
+    </main>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>
+

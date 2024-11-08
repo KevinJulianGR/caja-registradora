@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+        "contenedor-titulo"
+        "contenedor-info"
+    ;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 80%;
+}
+
+#fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: brightness(0.9);
+    background-image: url('../images/Fondo.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#contenedor-titulo {
+    height: 100%;
+    width: 100%;
+    grid-area: contenedor-titulo;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    font-family: "Inknut Antiqua", serif;
+    gap: 0;
+    font-size: 14px;
+}
+
+#titulo {
+    margin-left: 3%;
+}
+
+#logo {
+    height: 40px;
+    width: 55px;
+}
+
+#contenedor-info {
+    grid-area: contenedor-info;
+    display: grid;
+    grid-template-areas:
+        "container-products container-compra"
+    ;
+    grid-template-columns: 45% 45%;
+    grid-template-rows: 100%;
+    gap: 5%;
+    justify-content: center;
+}
+
+#container-products {
+    grid-area: container-products;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    background-color: hsla(0, 1%, 33%, 0.37);
+    font-family: "Inknut Antiqua", serif;
+    font-size: 12px;
+    border-radius: 5%;
+}
+
+#imagen-producto{
+    height: 250px; 
+    width: 250px;
+    object-fit: cover;
+}
+
+#subtitulo-products{
+    margin-top: 5%;
+}
+
+#container-compra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Inknut Antiqua", serif;
+    font-size: 12px;
+    background-color: hsla(0, 1%, 33%, 0.37);
+    border-radius: 5%;
+}
+
+#producto-cantidad{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sub-producto-cantidad{
+    display: flex;
+    justify-content: center;
+    gap: 25%;
+}
+
+input[type="text"], input[type="number"], .select-wrapper select {
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-family: "Inknut Antiqua", serif;
+    background-color: #fff;
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+
+#botones-accion button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-family: "Inknut Antiqua", serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#boton-comprar {
+    background-color: #28a745;
+    color: white;
+}
+
+#boton-comprar:hover {
+    background-color: #218838;
+}
+
+#boton-borrar {
+    background-color: #dc3545;
+    color: white;
+}
+
+#boton-borrar:hover {
+    background-color: #c82333;
+}
+
+#tabla-factura {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#tabla-factura th, #tabla-factura td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#tabla-factura th {
+    background-color: #008CBA;
+    color: white;
+}
+
+#factura {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#factura-body {
+    text-align: center;
+}
+
+#total-compra {
+    font-size: 15px;
+    font-weight: bold;
+}
+
